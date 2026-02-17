@@ -61,3 +61,6 @@ Este proyecto está preparado para desplegarse fácilmente en [Vercel](https://v
 -   **Textos**: Edita `src/context/translations.js` para cambiar los textos en Español e Inglés.
 -   **Proyectos**: Modifica `src/components/Projects/Projects.jsx` para añadir tus propios proyectos.
 -   **Estilos**: Los colores globales están en `src/index.css`.
+
+---
+*Última actualización: Febrero 2026*
