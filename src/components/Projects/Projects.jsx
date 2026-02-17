@@ -111,6 +111,7 @@ const Projects = () => {
                 project={selectedProject}
                 isOpen={isModalOpen}
                 onClose={closeModal}
+                t={t}
             />
         </section>
     );

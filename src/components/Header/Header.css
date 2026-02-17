@@ -39,6 +39,7 @@
     height: 35px;
     border-radius: 50%;
     object-fit: cover;
+    object-position: 55% center;
     border: 2px solid var(--color-primary);
 }
 

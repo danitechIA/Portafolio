@@ -10,7 +10,7 @@ const Header = () => {
     <header className="header">
       <div className="container header-content">
         <a href="#" className="logo">
-          <img src="/Foto1.jpg" alt="Daniel Dans Cots" className="logo-img" />
+          <img src="/Foto3.jpeg" alt="Daniel Dans Cots" className="logo-img" />
           <span>Daniel Dans Cots</span>
         </a>
         <div className="nav-container">

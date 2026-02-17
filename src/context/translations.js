@@ -22,10 +22,11 @@ export const translations = {
             viewDemo: "Ver Demo",
             viewCode: "Ver Código",
             viewDetails: "Ver Detalles",
+            close: "Cerrar",
             n8nProject: {
                 title: "Analizador de Tickets con IA y n8n",
                 shortDesc: "Automatización inteligente para procesar tickets, extraer datos con IA y organizar finanzas.",
-                fullDesc: "Sistema completamente automatizado desplegado en producción con Docker y SSL en VPS. El flujo de trabajo toma imágenes de tickets, utiliza IA para extraer datos clave (precio, IVA, proveedor) y almacena todo en MySQL y Excel. Incluye copias de seguridad automáticas del sistema completo.",
+                fullDesc: "Extrae automáticamente la información clave de tus tickets y facturas a partir de una simple foto.\n\nOrganiza tus documentos en carpetas y guarda todos los datos para tener tus gastos siempre bajo control.\n\nDetecta tickets repetidos para evitar errores y asegura que toda tu contabilidad esté siempre al día.",
                 workflow: [
                     "Subida de imagen del ticket/factura",
                     "Análisis con IA (Visión) para extracción de datos",
@@ -91,10 +92,11 @@ export const translations = {
             viewDemo: "Live Demo",
             viewCode: "Code",
             viewDetails: "View Details",
+            close: "Close",
             n8nProject: {
                 title: "AI Ticket Analyzer with n8n",
                 shortDesc: "Smart automation to process tickets, extract data with AI, and organize finances.",
-                fullDesc: "Fully automated system deployed in production with Docker and SSL on VPS. The workflow processes ticket images, uses AI to extract key data (price, VAT, supplier), and stores everything in MySQL and Excel. Includes automatic full system backups.",
+                fullDesc: "Automatically extracts key information from your tickets and invoices starting from a simple photo.\n\nOrganizes your documents into folders and saves all data to keep your expenses always under control.\n\nDetects duplicate tickets to prevent errors and ensures your accounting is always up to date.",
                 workflow: [
                     "Upload ticket/invoice image",
                     "AI Analysis (Vision) for data extraction",

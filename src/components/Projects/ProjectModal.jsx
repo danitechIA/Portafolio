@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { X, Github, ExternalLink, CheckCircle } from 'lucide-react';
 import './ProjectModal.css';
 
-const ProjectModal = ({ project, isOpen, onClose }) => {
+const ProjectModal = ({ project, isOpen, onClose, t }) => {
     useEffect(() => {
         const handleEsc = (e) => {
             if (e.key === 'Escape') onClose();
@@ -30,8 +30,9 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
     return (
         <div className="modal-backdrop" onClick={handleBackdropClick}>
             <div className="modal-content">
-                <button className="modal-close-btn" onClick={onClose}>
+                <button className="modal-close-btn" onClick={onClose} aria-label={t.projects.close}>
                     <X size={20} />
+                    <span>{t.projects.close}</span>
                 </button>
 
                 <div className="modal-header">
