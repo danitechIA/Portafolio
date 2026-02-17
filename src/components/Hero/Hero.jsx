@@ -12,7 +12,7 @@ const Hero = () => {
 
             <div className="container hero-content">
                 <div className="hero-profile-container">
-                    <img src="/Foto1.jpg" alt="Daniel Dans Cots" className="hero-profile-img" />
+                    <img src="/Foto3.jpeg" alt="Daniel Dans Cots" className="hero-profile-img" />
                 </div>
                 <h1 className="hero-title">
                     {t.hero.title}
