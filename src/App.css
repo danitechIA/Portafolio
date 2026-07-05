@@ -1,1 +1,6 @@
-/* Global styles moved to index.css */
+/* Global styles live in index.css */
+
+main {
+    position: relative;
+    z-index: 1;
+}

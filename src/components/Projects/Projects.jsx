@@ -1,13 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
-import { ExternalLink, Github, Folder, Eye, Receipt, Sparkles, Clapperboard, TrendingUp } from 'lucide-react';
+import { ExternalLink, Github, Eye, ArrowUpRight } from 'lucide-react';
 import ProjectModal from './ProjectModal';
+import useReveal from '../../hooks/useReveal';
 import './Projects.css';
+
+const TiltCard = ({ children, className, onClick }) => {
+    const ref = useRef(null);
+
+    const handleMove = (e) => {
+        const el = ref.current;
+        if (!el || window.matchMedia('(pointer: coarse)').matches) return;
+        const rect = el.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        el.style.transform = `perspective(1000px) rotateY(${x * 5}deg) rotateX(${-y * 5}deg) translateY(-4px)`;
+        el.style.setProperty('--mx', `${(x + 0.5) * 100}%`);
+        el.style.setProperty('--my', `${(y + 0.5) * 100}%`);
+    };
+
+    const handleLeave = () => {
+        if (ref.current) ref.current.style.transform = '';
+    };
+
+    return (
+        <div ref={ref} className={className} onMouseMove={handleMove} onMouseLeave={handleLeave} onClick={onClick}>
+            {children}
+        </div>
+    );
+};
 
 const Projects = () => {
     const { t } = useLanguage();
     const [selectedProject, setSelectedProject] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const ref = useReveal();
 
     const openModal = (project) => {
         setSelectedProject(project);
@@ -21,119 +48,79 @@ const Projects = () => {
 
     const projects = [
         {
-            title: t.projects.n8nProject.title,
-            description: t.projects.n8nProject.shortDesc,
-            fullDescription: t.projects.n8nProject.fullDesc,
-            workflow: t.projects.n8nProject.workflow,
-            features: t.projects.n8nProject.features,
-            tech: ["n8n", "Docker", "VPS", "MySQL", "OpenAI"],
-            image: t.projects.n8nProject.thumbnail,
-            icon: "Receipt",
-            demoLink: t.projects.n8nProject.demoLink,
-            technicalDocLabel: t.projects.n8nProject.technicalDocLabel,
-            screenshot: t.projects.n8nProject.screenshot,
-            repoLink: "https://github.com/danistrix63/n8n_tikets"
+            ...t.projects.tradingaiProject,
+            tech: ['Python', 'FastAPI', 'SQLite', 'Cerebras', 'Alpaca', 'systemd'],
+            status: t.projects.statusLive,
         },
         {
-            title: t.projects.skeyndorProject.title,
-            description: t.projects.skeyndorProject.shortDesc,
-            fullDescription: t.projects.skeyndorProject.fullDesc,
-            workflow: t.projects.skeyndorProject.workflow,
-            features: t.projects.skeyndorProject.features,
-            tech: ["React", "Vite", "GSAP", "Vercel"],
-            image: t.projects.skeyndorProject.thumbnail,
-            icon: "Sparkles",
-            demoLink: t.projects.skeyndorProject.demoLink,
-            demoLinkLabel: t.projects.skeyndorProject.demoLinkLabel,
-            technicalDocLabel: t.projects.skeyndorProject.technicalDocLabel,
-            screenshot: t.projects.skeyndorProject.screenshot
+            ...t.projects.tiktokaiProject,
+            tech: ['FastAPI', 'Python', 'ffmpeg', 'Groq', 'Whisper', 'Llama 3.1'],
+            status: t.projects.statusLive,
         },
         {
-            title: t.projects.tiktokaiProject.title,
-            description: t.projects.tiktokaiProject.shortDesc,
-            fullDescription: t.projects.tiktokaiProject.fullDesc,
-            workflow: t.projects.tiktokaiProject.workflow,
-            features: t.projects.tiktokaiProject.features,
-            tech: ["FastAPI", "Python", "ffmpeg", "Groq"],
-            image: t.projects.tiktokaiProject.thumbnail,
-            icon: "Clapperboard",
-            screenshot: t.projects.tiktokaiProject.screenshot
+            ...t.projects.skeyndorProject,
+            tech: ['React', 'Vite', 'GSAP', 'Vercel', 'SEO', 'GA4'],
+            status: t.projects.statusLive,
         },
         {
-            title: t.projects.tradingaiProject.title,
-            description: t.projects.tradingaiProject.shortDesc,
-            fullDescription: t.projects.tradingaiProject.fullDesc,
-            workflow: t.projects.tradingaiProject.workflow,
-            features: t.projects.tradingaiProject.features,
-            tech: ["Python", "FastAPI", "SQLite", "Cerebras", "Alpaca"],
-            image: t.projects.tradingaiProject.thumbnail,
-            icon: "TrendingUp",
-            screenshot: t.projects.tradingaiProject.screenshot
-        }
+            ...t.projects.n8nProject,
+            tech: ['n8n', 'Docker', 'VPS', 'MySQL', 'OpenAI'],
+            status: t.projects.statusLive,
+            repoLink: 'https://github.com/danitechIA/n8n_tikets',
+        },
     ];
 
-    const renderProjectImage = (project) => {
-        if (project.image) {
-            return <img src={project.image} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />;
-        }
-
-        // Fallback to Icon
-        const Icon = project.icon === "Receipt" ? Receipt : project.icon === "Sparkles" ? Sparkles : project.icon === "Clapperboard" ? Clapperboard : project.icon === "TrendingUp" ? TrendingUp : Folder;
-        return <Icon size={48} opacity={0.5} />;
-    };
-
     return (
-        <section id="projects" className="section projects-section">
+        <section id="projects" className="section projects-section" ref={ref}>
             <div className="container">
-                <div className="projects-header">
-                    <h2>{t.projects.title}</h2>
-                    <p>{t.projects.subtitle}</p>
+                <div className="projects-header reveal">
+                    <span className="section-tag">02 · {t.nav.projects}</span>
+                    <h2 className="section-title">{t.projects.title.split(' ')[0]} <span className="accent">{t.projects.title.split(' ').slice(1).join(' ')}</span></h2>
+                    <p className="projects-subtitle">{t.projects.subtitle}</p>
                 </div>
 
-                <div className="projects-grid">
+                <div className="projects-list">
                     {projects.map((project, index) => (
-                        <div key={index} className="project-card" onClick={() => openModal(project)}>
-                            <div className="project-image">
-                                {renderProjectImage(project)}
-                            </div>
-                            <div className="project-content">
-                                <h3 className="project-title">{project.title}</h3>
-                                <p className="project-description">{project.description}</p>
+                        <div key={index} className={`project-row reveal ${index % 2 ? 'reversed' : ''}`}>
+                            <TiltCard className="project-visual" onClick={() => openModal(project)}>
+                                <div className="project-visual-inner">
+                                    <img src={project.thumbnail} alt={project.title} loading="lazy" />
+                                    <div className="project-visual-overlay">
+                                        <span className="overlay-cta"><Eye size={18} /> {t.projects.viewDetails}</span>
+                                    </div>
+                                    <div className="visual-shine" />
+                                </div>
+                            </TiltCard>
+
+                            <div className="project-info">
+                                <div className="project-meta">
+                                    <span className="project-number">0{index + 1}</span>
+                                    <span className="project-status">
+                                        <span className="status-dot" /> {project.status}
+                                    </span>
+                                </div>
+                                <h3 className="project-title" onClick={() => openModal(project)}>
+                                    {project.title}
+                                    <ArrowUpRight size={20} className="title-arrow" />
+                                </h3>
+                                <p className="project-description">{project.shortDesc}</p>
                                 <div className="project-tech">
-                                    {project.tech.map((tech, i) => (
-                                        <span key={i} className="tech-tag">{tech}</span>
+                                    {project.tech.map((tech) => (
+                                        <span key={tech} className="tech-tag">{tech}</span>
                                     ))}
                                 </div>
                                 <div className="project-links">
-                                    <button
-                                        className="project-link btn-details"
-                                        onClick={(e) => {
-                                            e.stopPropagation(); // Prevent card click
-                                            openModal(project);
-                                        }}
-                                    >
-                                        <Eye size={16} /> {t.projects.viewDetails || "View Details"}
+                                    <button className="btn btn-outline btn-sm" onClick={() => openModal(project)}>
+                                        <Eye size={15} /> {t.projects.viewDetails}
                                     </button>
-
                                     {project.demoLink && (
-                                        <a
-                                            href={project.demoLink}
-                                            className="project-link"
-                                            onClick={(e) => e.stopPropagation()}
-                                        >
-                                            <ExternalLink size={16} /> {project.demoLinkLabel || t.projects.viewDemo}
+                                        <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-sm">
+                                            <ExternalLink size={15} /> {project.demoLinkLabel || t.projects.viewDemo}
                                         </a>
                                     )}
-
                                     {project.repoLink && (
-                                        <a
-                                            href={project.repoLink}
-                                            className="project-link"
-                                            target='_blank'
-                                            rel='noopener noreferrer'
-                                            onClick={(e) => e.stopPropagation()}
-                                        >
-                                            <Github size={16} /> {t.projects.viewCode}
+                                        <a href={project.repoLink} target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-sm">
+                                            <Github size={15} /> {t.projects.viewCode}
                                         </a>
                                     )}
                                 </div>
@@ -141,14 +128,16 @@ const Projects = () => {
                         </div>
                     ))}
                 </div>
+
+                <div className="projects-cta reveal">
+                    <p>{t.projects.moreOnGithub}</p>
+                    <a href="https://github.com/danitechIA" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                        <Github size={18} /> github.com/danitechIA
+                    </a>
+                </div>
             </div>
 
-            <ProjectModal
-                project={selectedProject}
-                isOpen={isModalOpen}
-                onClose={closeModal}
-                t={t}
-            />
+            <ProjectModal project={selectedProject} isOpen={isModalOpen} onClose={closeModal} t={t} />
         </section>
     );
 };
