@@ -69,6 +69,27 @@ export const translations = {
                 technicalDocLabel: "Visitar Web en Vivo",
                 thumbnail: "/skeyndor-thumbnail.png",
                 screenshot: "/skeyndor-screenshot.png"
+            },
+            tiktokaiProject: {
+                title: "TikTokAI — Editor de Subtítulos Karaoke con IA",
+                shortDesc: "Editor de vídeo estilo CapCut que transcribe y genera subtítulos karaoke palabra a palabra con IA, listo para renderizar y publicar en TikTok.",
+                fullDesc: "Herramienta propia de edición de vídeo vertical construida con FastAPI en el backend y una interfaz vanilla JS/HTML/CSS (sin frameworks ni build) inspirada en el editor de CapCut.\n\nEl flujo usa Groq como motor de IA: Whisper large-v3 para transcripción con timestamps por palabra, y Llama 3.1 8B para generar copy viral y hashtags a partir del contenido real del vídeo (con un prompt ajustado para no inventar afirmaciones que no aparecen en la transcripción).\n\nEl editor tiene un timeline multipista (subtítulos, títulos, sonido) con imantado a bordes de palabras y del cursor, historial de deshacer global, y un inspector contextual que muestra las propiedades del bloque seleccionado. El render final quema los subtítulos y títulos con ffmpeg/libass, mezclando efectos de sonido sintetizados (whoosh, pop, riser) con adelay/amix.\n\nDesplegado como servicio systemd independiente (Restart=always, prioridad de CPU reducida con nice) en el mismo VPS que el resto de mis proyectos, para no competir por recursos con los demás servicios en producción.",
+                workflow: [
+                    "Subida de vídeo vertical (grabado en el propio móvil)",
+                    "Transcripción word-level con Groq Whisper large-v3",
+                    "Edición en timeline multipista (subtítulos, títulos, sonido)",
+                    "Generación de hook viral y hashtags con Llama 3.1 (Groq)",
+                    "Render final quemando subtítulos con ffmpeg/libass",
+                    "Descarga del vídeo listo para publicar"
+                ],
+                features: [
+                    { title: "Transcripción con IA", desc: "Groq Whisper large-v3 transcribe con marcas de tiempo por palabra para el efecto karaoke." },
+                    { title: "Editor Multipista", desc: "Timeline estilo CapCut con imantado, deshacer global y edición por bloques." },
+                    { title: "Render ffmpeg/libass", desc: "Subtítulos y títulos animados quemados directamente en el vídeo final." },
+                    { title: "Copywriting con IA", desc: "Genera hook viral y hashtags con Llama 3.1 fiel al contenido real del vídeo." }
+                ],
+                thumbnail: "/tiktokai-thumbnail.png",
+                screenshot: "/tiktokai-screenshot.png"
             }
         },
         contact: {
@@ -163,6 +184,27 @@ export const translations = {
                 technicalDocLabel: "Visit Live Site",
                 thumbnail: "/skeyndor-thumbnail.png",
                 screenshot: "/skeyndor-screenshot.png"
+            },
+            tiktokaiProject: {
+                title: "TikTokAI — AI Karaoke Subtitle Editor",
+                shortDesc: "CapCut-style video editor that transcribes and generates word-by-word karaoke subtitles with AI, ready to render and post to TikTok.",
+                fullDesc: "A self-built vertical video editing tool with a FastAPI backend and a vanilla JS/HTML/CSS frontend (no framework, no build step), inspired by CapCut's editor.\n\nThe pipeline runs on Groq: Whisper large-v3 for word-level timestamped transcription, and Llama 3.1 8B to generate viral copy and hashtags straight from the video's actual content (with a tuned prompt to avoid inventing claims not present in the transcript).\n\nThe editor has a multi-track timeline (subtitles, titles, sound) with snapping to word and cursor boundaries, a global undo history, and a contextual inspector showing the properties of whatever block is selected. The final render burns subtitles and titles in with ffmpeg/libass, mixing synthesized sound effects (whoosh, pop, riser) via adelay/amix.\n\nDeployed as its own systemd service (Restart=always, lowered CPU priority via nice) on the same VPS as my other projects, so it doesn't compete for resources with the other services running in production.",
+                workflow: [
+                    "Upload a vertical video (recorded on the phone)",
+                    "Word-level transcription with Groq Whisper large-v3",
+                    "Edit on a multi-track timeline (subtitles, titles, sound)",
+                    "Generate a viral hook and hashtags with Llama 3.1 (Groq)",
+                    "Final render burning in subtitles with ffmpeg/libass",
+                    "Download the video ready to publish"
+                ],
+                features: [
+                    { title: "AI Transcription", desc: "Groq Whisper large-v3 transcribes with per-word timestamps for the karaoke effect." },
+                    { title: "Multi-Track Editor", desc: "CapCut-style timeline with snapping, global undo, and block-based editing." },
+                    { title: "ffmpeg/libass Render", desc: "Animated subtitles and titles burned directly into the final video." },
+                    { title: "AI Copywriting", desc: "Generates a viral hook and hashtags with Llama 3.1, faithful to the video's real content." }
+                ],
+                thumbnail: "/tiktokai-thumbnail.png",
+                screenshot: "/tiktokai-screenshot.png"
             }
         },
         contact: {
