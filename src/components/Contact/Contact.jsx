@@ -61,7 +61,7 @@ const Contact = () => {
                             <span className="channel-icon"><MapPin size={20} /></span>
                             <span className="channel-text">
                                 <span className="channel-label">{t.contact.locationLabel}</span>
-                                <span className="channel-value">Barcelona, España · {t.contact.remote}</span>
+                                <span className="channel-value">Barcelona, España</span>
                             </span>
                         </div>
                     </div>
