@@ -48,23 +48,24 @@ export const translations = {
             },
             skeyndorProject: {
                 title: "Estética Carme Cots — Web para Centro de Belleza",
-                shortDesc: "Rediseño completo de la web de un centro de estética real, con animaciones GSAP, SEO técnico y despliegue en producción.",
-                fullDesc: "Rediseño y desarrollo completo de la web de Estética Carme Cots, centro colaborador oficial de Skeyndor en Barcelona.\n\nPartiendo de una web básica, se rehizo el diseño entero: animaciones fluidas con GSAP y ScrollTrigger, curación y edición de fotografía real del centro, y una sección de reseñas fiel a las opiniones reales de clientas.\n\nSe desplegó en Vercel con dominio propio, integración continua desde GitHub, y una configuración completa de SEO técnico (sitemap, datos estructurados schema.org, Open Graph) además de Google Search Console, Tag Manager y Analytics para medir tráfico real.",
+                shortDesc: "Diseño y desarrollo desde cero con React y Vite, animaciones GSAP, CI/CD en Vercel y SEO técnico completo, para un negocio real en producción.",
+                fullDesc: "Diseño y desarrollo desde cero de la web de Estética Carme Cots, centro colaborador oficial de Skeyndor en Barcelona, construida con React 18 y Vite.\n\nToda la interfaz se animó con GSAP y ScrollTrigger (context API para limpieza de listeners y timelines por sección), sustituyendo un enfoque inicial basado en framer-motion. El banco de imágenes se procesó íntegramente en local: conversión de fotografías HEIC de iPhone a JPG/WebP con pillow-heif (el pipeline nativo de libheif fallaba con archivos con múltiples auxiliary images), curación de decenas de fotos casi duplicadas y recorte/optimización de cada asset final.\n\nEl pipeline de despliegue usa integración continua de GitHub a Vercel: cada push a main dispara build y deploy en producción en segundos, con dominio propio configurado vía DNS (registros A) y detección/resolución de bugs reales de CSS grid, cascada de imports y URL-encoding en nombres de archivo con caracteres especiales.\n\nSe completó con SEO técnico (sitemap.xml, robots.txt, datos estructurados schema.org de tipo BeautySalon, Open Graph y Twitter Cards) y analítica real mediante Google Tag Manager, GA4 y verificación en Search Console.",
                 workflow: [
-                    "Auditoría y rediseño completo de UI/UX",
-                    "Curación y edición de banco de fotografía real del centro",
+                    "Diseño de UI/UX desde cero (sin plantilla previa)",
+                    "Desarrollo del frontend con React 18 + Vite",
+                    "Conversión y curación del banco de fotografía real (HEIC → WebP/JPG)",
                     "Animaciones de scroll con GSAP y ScrollTrigger",
-                    "Despliegue continuo en Vercel conectado a GitHub",
-                    "Configuración de dominio propio y DNS",
-                    "SEO técnico, Search Console, Tag Manager y Analytics"
+                    "CI/CD: despliegue automático en Vercel desde GitHub",
+                    "Dominio propio, DNS, SEO técnico y Analytics (GTM + GA4)"
                 ],
                 features: [
-                    { title: "Animaciones GSAP", desc: "Transiciones y revelados suaves al hacer scroll en toda la web." },
-                    { title: "Despliegue en Vercel", desc: "Integración continua con GitHub: cada cambio se publica automáticamente." },
-                    { title: "SEO Técnico", desc: "Sitemap, datos estructurados, Open Graph y verificación en Search Console." },
-                    { title: "Analítica Real", desc: "Google Tag Manager y GA4 configurados para medir tráfico y conversiones." }
+                    { title: "Stack React + Vite", desc: "SPA construida desde cero con React 18, Vite y CSS puro, sin frameworks de UI." },
+                    { title: "Animaciones GSAP", desc: "ScrollTrigger con gsap.context para timelines aisladas y cleanup automático por componente." },
+                    { title: "CI/CD en Vercel", desc: "Integración continua con GitHub: cada push a main despliega a producción en segundos." },
+                    { title: "SEO Técnico", desc: "Sitemap, JSON-LD (schema.org), Open Graph, Search Console, GTM y GA4 configurados." }
                 ],
                 demoLink: "https://esteticacarmecots.com",
+                demoLinkLabel: "Ver Web",
                 technicalDocLabel: "Visitar Web en Vivo",
                 thumbnail: "/skeyndor-thumbnail.png",
                 screenshot: "/skeyndor-screenshot.png"
@@ -141,23 +142,24 @@ export const translations = {
             },
             skeyndorProject: {
                 title: "Estética Carme Cots — Beauty Salon Website",
-                shortDesc: "Full redesign of a real beauty salon's website, with GSAP animations, technical SEO, and a production deployment.",
-                fullDesc: "Complete redesign and development of the website for Estética Carme Cots, an official Skeyndor partner salon in Barcelona.\n\nStarting from a basic website, the entire design was rebuilt: smooth animations with GSAP and ScrollTrigger, curation and editing of real photography from the salon, and a reviews section faithful to real client testimonials.\n\nDeployed on Vercel with a custom domain, continuous integration from GitHub, and a full technical SEO setup (sitemap, schema.org structured data, Open Graph) plus Google Search Console, Tag Manager, and Analytics to measure real traffic.",
+                shortDesc: "Built from scratch with React and Vite, GSAP animations, Vercel CI/CD, and full technical SEO for a real production business.",
+                fullDesc: "Website for Estética Carme Cots, an official Skeyndor partner salon in Barcelona, designed and built from scratch with React 18 and Vite.\n\nThe entire UI was animated with GSAP and ScrollTrigger (using the context API for per-section timelines and automatic listener cleanup), replacing an initial framer-motion approach. The photo library was processed entirely locally: HEIC-to-JPG/WebP conversion for iPhone photos via pillow-heif (the native libheif pipeline failed on files with multiple auxiliary images), curation of dozens of near-duplicate shots, and cropping/optimization of every final asset.\n\nThe deployment pipeline uses continuous integration from GitHub to Vercel: every push to main triggers a production build and deploy within seconds, with a custom domain wired up via DNS (A records), plus real CSS grid, import-order cascade, and URL-encoding bugs found and fixed along the way.\n\nRounded out with full technical SEO (sitemap.xml, robots.txt, schema.org BeautySalon structured data, Open Graph and Twitter Cards) and real analytics via Google Tag Manager, GA4, and Search Console verification.",
                 workflow: [
-                    "Full UI/UX audit and redesign",
-                    "Curation and editing of the salon's real photo library",
+                    "UI/UX design from scratch (no template)",
+                    "Frontend built with React 18 + Vite",
+                    "Real photo library conversion and curation (HEIC → WebP/JPG)",
                     "Scroll animations with GSAP and ScrollTrigger",
-                    "Continuous deployment on Vercel connected to GitHub",
-                    "Custom domain and DNS setup",
-                    "Technical SEO, Search Console, Tag Manager and Analytics"
+                    "CI/CD: automatic Vercel deployment from GitHub",
+                    "Custom domain, DNS, technical SEO and Analytics (GTM + GA4)"
                 ],
                 features: [
-                    { title: "GSAP Animations", desc: "Smooth scroll-triggered transitions and reveals across the site." },
-                    { title: "Vercel Deployment", desc: "Continuous integration with GitHub: every change goes live automatically." },
-                    { title: "Technical SEO", desc: "Sitemap, structured data, Open Graph tags and Search Console verification." },
-                    { title: "Real Analytics", desc: "Google Tag Manager and GA4 configured to track traffic and conversions." }
+                    { title: "React + Vite Stack", desc: "SPA built from scratch with React 18, Vite, and plain CSS, no UI framework." },
+                    { title: "GSAP Animations", desc: "ScrollTrigger with gsap.context for isolated per-component timelines and automatic cleanup." },
+                    { title: "Vercel CI/CD", desc: "Continuous integration with GitHub: every push to main deploys to production in seconds." },
+                    { title: "Technical SEO", desc: "Sitemap, JSON-LD (schema.org), Open Graph, Search Console, GTM and GA4 configured." }
                 ],
                 demoLink: "https://esteticacarmecots.com",
+                demoLinkLabel: "View Site",
                 technicalDocLabel: "Visit Live Site",
                 thumbnail: "/skeyndor-thumbnail.png",
                 screenshot: "/skeyndor-screenshot.png"

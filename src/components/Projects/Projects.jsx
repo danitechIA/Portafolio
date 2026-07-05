@@ -44,6 +44,7 @@ const Projects = () => {
             image: t.projects.skeyndorProject.thumbnail,
             icon: "Sparkles",
             demoLink: t.projects.skeyndorProject.demoLink,
+            demoLinkLabel: t.projects.skeyndorProject.demoLinkLabel,
             technicalDocLabel: t.projects.skeyndorProject.technicalDocLabel,
             screenshot: t.projects.skeyndorProject.screenshot
         }
@@ -98,7 +99,7 @@ const Projects = () => {
                                             className="project-link"
                                             onClick={(e) => e.stopPropagation()}
                                         >
-                                            <ExternalLink size={16} /> {t.projects.viewDemo}
+                                            <ExternalLink size={16} /> {project.demoLinkLabel || t.projects.viewDemo}
                                         </a>
                                     )}
 
