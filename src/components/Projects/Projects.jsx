@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
-import { ExternalLink, Github, Folder, Eye, Receipt, Sparkles, Clapperboard } from 'lucide-react';
+import { ExternalLink, Github, Folder, Eye, Receipt, Sparkles, Clapperboard, TrendingUp } from 'lucide-react';
 import ProjectModal from './ProjectModal';
 import './Projects.css';
 
@@ -58,6 +58,17 @@ const Projects = () => {
             image: t.projects.tiktokaiProject.thumbnail,
             icon: "Clapperboard",
             screenshot: t.projects.tiktokaiProject.screenshot
+        },
+        {
+            title: t.projects.tradingaiProject.title,
+            description: t.projects.tradingaiProject.shortDesc,
+            fullDescription: t.projects.tradingaiProject.fullDesc,
+            workflow: t.projects.tradingaiProject.workflow,
+            features: t.projects.tradingaiProject.features,
+            tech: ["Python", "FastAPI", "SQLite", "Cerebras", "Alpaca"],
+            image: t.projects.tradingaiProject.thumbnail,
+            icon: "TrendingUp",
+            screenshot: t.projects.tradingaiProject.screenshot
         }
     ];
 
@@ -67,7 +78,7 @@ const Projects = () => {
         }
 
         // Fallback to Icon
-        const Icon = project.icon === "Receipt" ? Receipt : project.icon === "Sparkles" ? Sparkles : project.icon === "Clapperboard" ? Clapperboard : Folder;
+        const Icon = project.icon === "Receipt" ? Receipt : project.icon === "Sparkles" ? Sparkles : project.icon === "Clapperboard" ? Clapperboard : project.icon === "TrendingUp" ? TrendingUp : Folder;
         return <Icon size={48} opacity={0.5} />;
     };
 

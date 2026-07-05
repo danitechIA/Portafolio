@@ -90,6 +90,27 @@ export const translations = {
                 ],
                 thumbnail: "/tiktokai-thumbnail.png",
                 screenshot: "/tiktokai-screenshot.png"
+            },
+            tradingaiProject: {
+                title: "Trading Sentinel — Bot de Trading Algorítmico con IA",
+                shortDesc: "Sistema autónomo que detecta noticias catalizadoras en micro-caps y opera en una cuenta de paper trading, combinando scraping en tiempo real, cascada de LLMs y gestión de riesgo automatizada.",
+                fullDesc: "Sistema de trading algorítmico que vigila un feed de noticias en tiempo real (RSS, ~15s) buscando catalizadores en acciones micro-cap (market cap y float bajos), y opera automáticamente en una cuenta de paper trading (Alpaca), sin dinero real.\n\nEl pipeline pasa cada noticia por un filtro anti-spam, un scoring heurístico propio (IBP) y una validación de elegibilidad de mercado antes de llegar a la IA, para no gastar cuota en ruido. El análisis final usa una cascada de LLMs con fallback automático (Cerebras como proveedor principal, con Groq y Gemini como respaldo) que evalúa cada catalizador y genera una señal con nivel de confianza y urgencia.\n\nLa gestión de riesgo es automática: stop-loss, take-profit, tiempo máximo de posición y un monitor que vigila cada posición abierta cada 20 segundos. Los fundamentales (capitalización, float) se resuelven con una cadena de fuentes con fallback (yfinance → SEC EDGAR → Finnhub) para evitar operar sin datos.\n\nBackend en FastAPI con SQLite en modo WAL, backups automáticos cada 6h, más de 100 tests, desplegado como servicio systemd con reinicio automático, y un dashboard propio en tiempo real con curva de equity, posiciones, señales y estado del sistema.",
+                workflow: [
+                    "Ingesta de noticias en tiempo real (RSS, ~15s)",
+                    "Filtro anti-spam y scoring heurístico (IBP)",
+                    "Validación de ticker y elegibilidad de mercado",
+                    "Análisis con cascada de LLMs (Cerebras → Groq → Gemini)",
+                    "Gestión de riesgo y ejecución en broker (Alpaca paper)",
+                    "Monitor de posiciones y backups automáticos"
+                ],
+                features: [
+                    { title: "Cascada de LLMs", desc: "Cerebras como proveedor principal con fallback automático a Groq y Gemini ante límites de cuota." },
+                    { title: "Gestión de Riesgo", desc: "Stop-loss, take-profit, tiempo máximo de posición y monitor automático cada 20s." },
+                    { title: "Fundamentales Multi-Fuente", desc: "Cadena de fallback yfinance → SEC EDGAR → Finnhub para evitar operar sin datos." },
+                    { title: "Dashboard en Tiempo Real", desc: "FastAPI con curva de equity, señales, órdenes y estado del sistema en vivo." }
+                ],
+                thumbnail: "/tradingai-thumbnail.png",
+                screenshot: "/tradingai-screenshot.png"
             }
         },
         contact: {
@@ -205,6 +226,27 @@ export const translations = {
                 ],
                 thumbnail: "/tiktokai-thumbnail.png",
                 screenshot: "/tiktokai-screenshot.png"
+            },
+            tradingaiProject: {
+                title: "Trading Sentinel — AI Algorithmic Trading Bot",
+                shortDesc: "Autonomous system that detects catalyst news on micro-cap stocks and trades on a paper trading account, combining real-time scraping, an LLM cascade, and automated risk management.",
+                fullDesc: "An algorithmic trading system that watches a real-time news feed (RSS, ~15s) for catalysts on micro-cap stocks (low market cap and float), and trades automatically on a paper trading account (Alpaca) — no real money involved.\n\nThe pipeline runs each news item through an anti-spam filter, a custom heuristic scorer (IBP), and a market-eligibility check before it ever reaches the AI, so quota isn't wasted on noise. The final analysis uses an LLM cascade with automatic fallback (Cerebras as the primary provider, with Groq and Gemini as backups) that evaluates each catalyst and produces a signal with a confidence and urgency level.\n\nRisk management is automatic: stop-loss, take-profit, a maximum hold time, and a monitor that checks every open position every 20 seconds. Fundamentals (market cap, float) are resolved through a fallback chain (yfinance → SEC EDGAR → Finnhub) to avoid trading blind.\n\nBackend built with FastAPI and SQLite in WAL mode, automatic backups every 6h, 100+ tests, deployed as a systemd service with automatic restarts, plus its own real-time dashboard with an equity curve, positions, signals, and system status.",
+                workflow: [
+                    "Real-time news ingestion (RSS, ~15s)",
+                    "Anti-spam filter and heuristic scoring (IBP)",
+                    "Ticker validation and market eligibility check",
+                    "Analysis via LLM cascade (Cerebras → Groq → Gemini)",
+                    "Risk management and broker execution (Alpaca paper)",
+                    "Position monitoring and automatic backups"
+                ],
+                features: [
+                    { title: "LLM Cascade", desc: "Cerebras as the primary provider with automatic fallback to Groq and Gemini on rate limits." },
+                    { title: "Risk Management", desc: "Stop-loss, take-profit, max hold time, and an automatic monitor every 20s." },
+                    { title: "Multi-Source Fundamentals", desc: "Fallback chain yfinance → SEC EDGAR → Finnhub to avoid trading without data." },
+                    { title: "Real-Time Dashboard", desc: "FastAPI-powered dashboard with live equity curve, signals, orders and system status." }
+                ],
+                thumbnail: "/tradingai-thumbnail.png",
+                screenshot: "/tradingai-screenshot.png"
             }
         },
         contact: {
