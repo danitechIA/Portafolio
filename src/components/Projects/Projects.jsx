@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
-import { ExternalLink, Github, Folder, Eye, Receipt, Sparkles } from 'lucide-react';
+import { ExternalLink, Github, Folder, Eye, Receipt, Sparkles, Clapperboard } from 'lucide-react';
 import ProjectModal from './ProjectModal';
 import './Projects.css';
 
@@ -47,6 +47,17 @@ const Projects = () => {
             demoLinkLabel: t.projects.skeyndorProject.demoLinkLabel,
             technicalDocLabel: t.projects.skeyndorProject.technicalDocLabel,
             screenshot: t.projects.skeyndorProject.screenshot
+        },
+        {
+            title: t.projects.tiktokaiProject.title,
+            description: t.projects.tiktokaiProject.shortDesc,
+            fullDescription: t.projects.tiktokaiProject.fullDesc,
+            workflow: t.projects.tiktokaiProject.workflow,
+            features: t.projects.tiktokaiProject.features,
+            tech: ["FastAPI", "Python", "ffmpeg", "Groq"],
+            image: t.projects.tiktokaiProject.thumbnail,
+            icon: "Clapperboard",
+            screenshot: t.projects.tiktokaiProject.screenshot
         }
     ];
 
@@ -56,7 +67,7 @@ const Projects = () => {
         }
 
         // Fallback to Icon
-        const Icon = project.icon === "Receipt" ? Receipt : project.icon === "Sparkles" ? Sparkles : Folder;
+        const Icon = project.icon === "Receipt" ? Receipt : project.icon === "Sparkles" ? Sparkles : project.icon === "Clapperboard" ? Clapperboard : Folder;
         return <Icon size={48} opacity={0.5} />;
     };
 
