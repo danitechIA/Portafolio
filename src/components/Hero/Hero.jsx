@@ -14,8 +14,9 @@ const TERMINAL_LINES = [
 ];
 
 const Hero = () => {
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
     const typed = useTypewriter(t.hero.roles);
+    const cvFile = language === 'en' ? '/Daniel_Dans_CV_EN.pdf' : '/Daniel_Dans_CV_ES.pdf';
 
     return (
         <section className="hero">
@@ -46,7 +47,7 @@ const Hero = () => {
                         <a href="#projects" className="btn btn-primary">
                             {t.hero.viewWork} <ArrowRight size={18} />
                         </a>
-                        <a href="/Daniel_Dans_CV.pdf" download="Daniel_Dans_CV.pdf" className="btn btn-outline">
+                        <a href={cvFile} download className="btn btn-outline">
                             {t.hero.downloadCV} <Download size={18} />
                         </a>
                     </div>
