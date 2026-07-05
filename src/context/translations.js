@@ -45,6 +45,29 @@ export const translations = {
                 technicalDocLabel: "Ver Guía Técnica",
                 thumbnail: "/n8n-thumbnail.png",
                 screenshot: "/n8n-workflow.png"
+            },
+            skeyndorProject: {
+                title: "Estética Carme Cots — Web para Centro de Belleza",
+                shortDesc: "Rediseño completo de la web de un centro de estética real, con animaciones GSAP, SEO técnico y despliegue en producción.",
+                fullDesc: "Rediseño y desarrollo completo de la web de Estética Carme Cots, centro colaborador oficial de Skeyndor en Barcelona.\n\nPartiendo de una web básica, se rehizo el diseño entero: animaciones fluidas con GSAP y ScrollTrigger, curación y edición de fotografía real del centro, y una sección de reseñas fiel a las opiniones reales de clientas.\n\nSe desplegó en Vercel con dominio propio, integración continua desde GitHub, y una configuración completa de SEO técnico (sitemap, datos estructurados schema.org, Open Graph) además de Google Search Console, Tag Manager y Analytics para medir tráfico real.",
+                workflow: [
+                    "Auditoría y rediseño completo de UI/UX",
+                    "Curación y edición de banco de fotografía real del centro",
+                    "Animaciones de scroll con GSAP y ScrollTrigger",
+                    "Despliegue continuo en Vercel conectado a GitHub",
+                    "Configuración de dominio propio y DNS",
+                    "SEO técnico, Search Console, Tag Manager y Analytics"
+                ],
+                features: [
+                    { title: "Animaciones GSAP", desc: "Transiciones y revelados suaves al hacer scroll en toda la web." },
+                    { title: "Despliegue en Vercel", desc: "Integración continua con GitHub: cada cambio se publica automáticamente." },
+                    { title: "SEO Técnico", desc: "Sitemap, datos estructurados, Open Graph y verificación en Search Console." },
+                    { title: "Analítica Real", desc: "Google Tag Manager y GA4 configurados para medir tráfico y conversiones." }
+                ],
+                demoLink: "https://esteticacarmecots.com",
+                technicalDocLabel: "Visitar Web en Vivo",
+                thumbnail: "/skeyndor-thumbnail.png",
+                screenshot: "/skeyndor-screenshot.png"
             }
         },
         contact: {
@@ -115,6 +138,29 @@ export const translations = {
                 technicalDocLabel: "View Technical Guide",
                 thumbnail: "/n8n-thumbnail.png",
                 screenshot: "/n8n-workflow.png"
+            },
+            skeyndorProject: {
+                title: "Estética Carme Cots — Beauty Salon Website",
+                shortDesc: "Full redesign of a real beauty salon's website, with GSAP animations, technical SEO, and a production deployment.",
+                fullDesc: "Complete redesign and development of the website for Estética Carme Cots, an official Skeyndor partner salon in Barcelona.\n\nStarting from a basic website, the entire design was rebuilt: smooth animations with GSAP and ScrollTrigger, curation and editing of real photography from the salon, and a reviews section faithful to real client testimonials.\n\nDeployed on Vercel with a custom domain, continuous integration from GitHub, and a full technical SEO setup (sitemap, schema.org structured data, Open Graph) plus Google Search Console, Tag Manager, and Analytics to measure real traffic.",
+                workflow: [
+                    "Full UI/UX audit and redesign",
+                    "Curation and editing of the salon's real photo library",
+                    "Scroll animations with GSAP and ScrollTrigger",
+                    "Continuous deployment on Vercel connected to GitHub",
+                    "Custom domain and DNS setup",
+                    "Technical SEO, Search Console, Tag Manager and Analytics"
+                ],
+                features: [
+                    { title: "GSAP Animations", desc: "Smooth scroll-triggered transitions and reveals across the site." },
+                    { title: "Vercel Deployment", desc: "Continuous integration with GitHub: every change goes live automatically." },
+                    { title: "Technical SEO", desc: "Sitemap, structured data, Open Graph tags and Search Console verification." },
+                    { title: "Real Analytics", desc: "Google Tag Manager and GA4 configured to track traffic and conversions." }
+                ],
+                demoLink: "https://esteticacarmecots.com",
+                technicalDocLabel: "Visit Live Site",
+                thumbnail: "/skeyndor-thumbnail.png",
+                screenshot: "/skeyndor-screenshot.png"
             }
         },
         contact: {
