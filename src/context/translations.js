@@ -71,7 +71,7 @@ export const translations = {
                 screenshot: "/skeyndor-screenshot.png"
             },
             tiktokaiProject: {
-                title: "TikTokAI — Editor de Subtítulos Karaoke con IA",
+                title: "TikTokAI — Editor de Subtítulos con IA",
                 shortDesc: "Editor de vídeo estilo CapCut que transcribe y genera subtítulos karaoke palabra a palabra con IA, listo para renderizar y publicar en TikTok.",
                 fullDesc: "Herramienta propia de edición de vídeo vertical construida con FastAPI en el backend y una interfaz vanilla JS/HTML/CSS (sin frameworks ni build) inspirada en el editor de CapCut.\n\nEl flujo usa Groq como motor de IA: Whisper large-v3 para transcripción con timestamps por palabra, y Llama 3.1 8B para generar copy viral y hashtags a partir del contenido real del vídeo (con un prompt ajustado para no inventar afirmaciones que no aparecen en la transcripción).\n\nEl editor tiene un timeline multipista (subtítulos, títulos, sonido) con imantado a bordes de palabras y del cursor, historial de deshacer global, y un inspector contextual que muestra las propiedades del bloque seleccionado. El render final quema los subtítulos y títulos con ffmpeg/libass, mezclando efectos de sonido sintetizados (whoosh, pop, riser) con adelay/amix.\n\nDesplegado como servicio systemd independiente (Restart=always, prioridad de CPU reducida con nice) en el mismo VPS que el resto de mis proyectos, para no competir por recursos con los demás servicios en producción.",
                 workflow: [
@@ -207,7 +207,7 @@ export const translations = {
                 screenshot: "/skeyndor-screenshot.png"
             },
             tiktokaiProject: {
-                title: "TikTokAI — AI Karaoke Subtitle Editor",
+                title: "TikTokAI — AI Subtitle Editor",
                 shortDesc: "CapCut-style video editor that transcribes and generates word-by-word karaoke subtitles with AI, ready to render and post to TikTok.",
                 fullDesc: "A self-built vertical video editing tool with a FastAPI backend and a vanilla JS/HTML/CSS frontend (no framework, no build step), inspired by CapCut's editor.\n\nThe pipeline runs on Groq: Whisper large-v3 for word-level timestamped transcription, and Llama 3.1 8B to generate viral copy and hashtags straight from the video's actual content (with a tuned prompt to avoid inventing claims not present in the transcript).\n\nThe editor has a multi-track timeline (subtitles, titles, sound) with snapping to word and cursor boundaries, a global undo history, and a contextual inspector showing the properties of whatever block is selected. The final render burns subtitles and titles in with ffmpeg/libass, mixing synthesized sound effects (whoosh, pop, riser) via adelay/amix.\n\nDeployed as its own systemd service (Restart=always, lowered CPU priority via nice) on the same VPS as my other projects, so it doesn't compete for resources with the other services running in production.",
                 workflow: [
