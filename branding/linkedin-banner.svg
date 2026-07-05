@@ -1,0 +1,109 @@
+<svg width="1584" height="396" viewBox="0 0 1584 396" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#06080f"/>
+      <stop offset="0.55" stop-color="#0a0e1a"/>
+      <stop offset="1" stop-color="#0c0f1f"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="0.55" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#f472b6"/>
+    </linearGradient>
+    <radialGradient id="orbCyan" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbViolet" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbPink" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f472b6" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#f472b6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M 46 0 L 0 0 0 46" fill="none" stroke="#94a3b8" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1584" height="396" fill="url(#bg)"/>
+  <rect width="1584" height="396" fill="url(#grid)"/>
+  <ellipse cx="300" cy="30" rx="480" ry="300" fill="url(#orbCyan)"/>
+  <ellipse cx="1420" cy="360" rx="460" ry="300" fill="url(#orbViolet)"/>
+  <ellipse cx="980" cy="-40" rx="380" ry="240" fill="url(#orbPink)"/>
+
+  <!-- Constellation dots + links -->
+  <g stroke="#60a5fa" stroke-opacity="0.16" stroke-width="1">
+    <line x1="120" y1="70" x2="235" y2="120"/><line x1="235" y1="120" x2="330" y2="55"/>
+    <line x1="620" y1="330" x2="730" y2="290"/><line x1="730" y1="290" x2="820" y2="345"/>
+    <line x1="1240" y1="80" x2="1330" y2="140"/><line x1="1330" y1="140" x2="1435" y2="90"/>
+    <line x1="480" y1="45" x2="565" y2="90"/>
+  </g>
+  <g fill="#67e8f9" fill-opacity="0.7">
+    <circle cx="120" cy="70" r="2.4"/><circle cx="235" cy="120" r="1.8"/><circle cx="330" cy="55" r="2.2"/>
+    <circle cx="480" cy="45" r="1.6"/><circle cx="565" cy="90" r="2.1"/>
+    <circle cx="620" cy="330" r="2.2"/><circle cx="730" cy="290" r="1.7"/><circle cx="820" cy="345" r="2.3"/>
+    <circle cx="1240" cy="80" r="2.1"/><circle cx="1330" cy="140" r="1.7"/><circle cx="1435" cy="90" r="2.4"/>
+    <circle cx="1050" cy="330" r="1.8"/><circle cx="920" cy="60" r="1.6"/><circle cx="1520" cy="200" r="2"/>
+  </g>
+
+  <!-- ============ LEFT: identity ============ -->
+  <g transform="translate(150, 0)">
+    <!-- tag -->
+    <rect x="0" y="74" rx="14" ry="14" width="176" height="30" fill="#22d3ee" fill-opacity="0.08" stroke="#22d3ee" stroke-opacity="0.35"/>
+    <text x="16" y="94" font-family="JetBrains Mono" font-size="14" fill="#22d3ee">~/full-stack-dev</text>
+
+    <!-- name -->
+    <text x="0" y="164" font-family="Space Grotesk" font-weight="700" font-size="62" fill="#eef2ff">Daniel <tspan fill="url(#brand)">Dans Cots</tspan></text>
+
+    <!-- typed role -->
+    <text x="0" y="212" font-family="JetBrains Mono" font-size="22" fill="#8b94ad"><tspan fill="#f472b6">&gt;</tspan> Full-Stack Developer · <tspan fill="#22d3ee">AI &amp; Automation</tspan><tspan fill="#22d3ee"> _</tspan></text>
+
+    <!-- chips -->
+    <g font-family="JetBrains Mono" font-size="14">
+      <rect x="0" y="242" rx="13" width="72" height="28" fill="none" stroke="#a78bfa" stroke-opacity="0.45"/>
+      <text x="14" y="261" fill="#c4b5fd">React</text>
+      <rect x="84" y="242" rx="13" width="82" height="28" fill="none" stroke="#a78bfa" stroke-opacity="0.45"/>
+      <text x="98" y="261" fill="#c4b5fd">Python</text>
+      <rect x="178" y="242" rx="13" width="92" height="28" fill="none" stroke="#a78bfa" stroke-opacity="0.45"/>
+      <text x="192" y="261" fill="#c4b5fd">FastAPI</text>
+      <rect x="282" y="242" rx="13" width="62" height="28" fill="none" stroke="#a78bfa" stroke-opacity="0.45"/>
+      <text x="296" y="261" fill="#c4b5fd">LLMs</text>
+      <rect x="356" y="242" rx="13" width="56" height="28" fill="none" stroke="#a78bfa" stroke-opacity="0.45"/>
+      <text x="370" y="261" fill="#c4b5fd">n8n</text>
+      <rect x="424" y="242" rx="13" width="112" height="28" fill="none" stroke="#a78bfa" stroke-opacity="0.45"/>
+      <text x="438" y="261" fill="#c4b5fd">VPS/Linux</text>
+    </g>
+
+    <!-- links -->
+    <text x="0" y="312" font-family="JetBrains Mono" font-size="15" fill="#8b94ad"><tspan fill="#22d3ee">&#8226;</tspan> danitechia.vercel.app&#160;&#160;&#160;<tspan fill="#a78bfa">&#8226;</tspan> github.com/danitechIA&#160;&#160;&#160;<tspan fill="#f472b6">&#8226;</tspan> ddctrabajocontacto@gmail.com</text>
+  </g>
+
+  <!-- ============ RIGHT: terminal ============ -->
+  <g transform="translate(1010, 62)">
+    <rect x="0" y="0" width="430" height="272" rx="16" fill="#0a0e1a" fill-opacity="0.92" stroke="#94a3b8" stroke-opacity="0.25"/>
+    <rect x="0" y="0" width="430" height="40" rx="16" fill="#161d33" fill-opacity="0.85"/>
+    <rect x="0" y="24" width="430" height="16" fill="#161d33" fill-opacity="0.85"/>
+    <line x1="0" y1="40" x2="430" y2="40" stroke="#94a3b8" stroke-opacity="0.15"/>
+    <circle cx="24" cy="20" r="6" fill="#ff5f57"/>
+    <circle cx="44" cy="20" r="6" fill="#febc2e"/>
+    <circle cx="64" cy="20" r="6" fill="#28c840"/>
+    <text x="86" y="25" font-family="JetBrains Mono" font-size="13" fill="#8b94ad">daniel@vps: ~/portfolio</text>
+
+    <g font-family="JetBrains Mono" font-size="15">
+      <text x="22" y="74"><tspan fill="#22d3ee">&gt;</tspan> <tspan fill="#eef2ff">whoami</tspan></text>
+      <text x="22" y="102" fill="#8b94ad">full-stack &amp; AI developer</text>
+      <text x="22" y="134"><tspan fill="#22d3ee">&gt;</tspan> <tspan fill="#eef2ff">ls ~/stack</tspan></text>
+      <text x="22" y="162" fill="#8b94ad">react/ python/ fastapi/ llms/</text>
+      <text x="22" y="194"><tspan fill="#22d3ee">&gt;</tspan> <tspan fill="#eef2ff">./deploy.sh --production</tspan></text>
+      <text x="22" y="222" fill="#34d399">OK 4 proyectos en producci&#243;n 24/7</text>
+      <text x="22" y="252"><tspan fill="#22d3ee">&gt;</tspan> <tspan fill="#22d3ee">_</tspan></text>
+    </g>
+  </g>
+
+  <!-- corner brackets -->
+  <path d="M 1544 24 h 16 v 16" fill="none" stroke="#22d3ee" stroke-opacity="0.6" stroke-width="2"/>
+  <path d="M 40 372 h -16 v -16" fill="none" stroke="#f472b6" stroke-opacity="0.6" stroke-width="2"/>
+</svg>
