@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, Github, ExternalLink, CheckCircle } from 'lucide-react';
+import { X, Github, ExternalLink, CheckCircle, GitBranch } from 'lucide-react';
 import './ProjectModal.css';
 
 const ProjectModal = ({ project, isOpen, onClose, t }) => {
@@ -22,42 +22,37 @@ const ProjectModal = ({ project, isOpen, onClose, t }) => {
     if (!isOpen || !project) return null;
 
     const handleBackdropClick = (e) => {
-        if (e.target === e.currentTarget) {
-            onClose();
-        }
+        if (e.target === e.currentTarget) onClose();
     };
 
     return (
         <div className="modal-backdrop" onClick={handleBackdropClick}>
             <div className="modal-content">
                 <button className="modal-close-btn" onClick={onClose} aria-label={t.projects.close}>
-                    <X size={20} />
-                    <span>{t.projects.close}</span>
+                    <X size={18} />
                 </button>
 
                 <div className="modal-header">
                     <h2 className="modal-title">{project.title}</h2>
                     <div className="modal-tech-stack">
-                        {project.tech.map((tech, index) => (
-                            <span key={index} className="tech-tag">{tech}</span>
+                        {project.tech.map((tech) => (
+                            <span key={tech} className="tech-tag">{tech}</span>
                         ))}
                     </div>
                 </div>
 
                 <div className="modal-body">
                     {project.screenshot && (
-                        <div className="modal-section modal-screenshot-section">
+                        <div className="modal-screenshot-wrap">
                             <img src={project.screenshot} alt={project.title} className="modal-screenshot" />
                         </div>
                     )}
 
-                    <div className="modal-section">
-                        <p className="project-description-full">{project.fullDescription}</p>
-                    </div>
+                    <p className="project-description-full">{project.fullDesc}</p>
 
                     {project.workflow && (
                         <div className="modal-section">
-                            <h3 className="modal-section-title">Workflow Architecture</h3>
+                            <h3 className="modal-section-title"><GitBranch size={17} /> {t.projects.workflowTitle}</h3>
                             <div className="workflow-steps">
                                 {project.workflow.map((step, index) => (
                                     <div key={index} className="workflow-step">
@@ -71,11 +66,11 @@ const ProjectModal = ({ project, isOpen, onClose, t }) => {
 
                     {project.features && (
                         <div className="modal-section">
-                            <h3 className="modal-section-title">Key Features</h3>
+                            <h3 className="modal-section-title"><CheckCircle size={17} /> {t.projects.featuresTitle}</h3>
                             <div className="feature-list">
                                 {project.features.map((feature, index) => (
                                     <div key={index} className="feature-item">
-                                        <h4><CheckCircle size={16} style={{ display: 'inline', marginRight: '8px' }} /> {feature.title}</h4>
+                                        <h4>{feature.title}</h4>
                                         <p>{feature.desc}</p>
                                     </div>
                                 ))}
@@ -86,13 +81,13 @@ const ProjectModal = ({ project, isOpen, onClose, t }) => {
 
                 <div className="modal-footer">
                     {project.demoLink && (
-                        <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="btn-secondary">
-                            <ExternalLink size={18} /> {project.technicalDocLabel || 'Technical Guide'}
+                        <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+                            <ExternalLink size={17} /> {project.technicalDocLabel || project.demoLinkLabel || 'Demo'}
                         </a>
                     )}
                     {project.repoLink && (
-                        <a href={project.repoLink} target="_blank" rel="noopener noreferrer" className="btn-primary">
-                            <Github size={18} /> GitHub Repo
+                        <a href={project.repoLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                            <Github size={17} /> GitHub
                         </a>
                     )}
                 </div>
