@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
-import { ExternalLink, Github, Folder, Eye, Receipt } from 'lucide-react';
+import { ExternalLink, Github, Folder, Eye, Receipt, Sparkles } from 'lucide-react';
 import ProjectModal from './ProjectModal';
 import './Projects.css';
 
@@ -33,6 +33,19 @@ const Projects = () => {
             technicalDocLabel: t.projects.n8nProject.technicalDocLabel,
             screenshot: t.projects.n8nProject.screenshot,
             repoLink: "https://github.com/danistrix63/n8n_tikets"
+        },
+        {
+            title: t.projects.skeyndorProject.title,
+            description: t.projects.skeyndorProject.shortDesc,
+            fullDescription: t.projects.skeyndorProject.fullDesc,
+            workflow: t.projects.skeyndorProject.workflow,
+            features: t.projects.skeyndorProject.features,
+            tech: ["React", "Vite", "GSAP", "Vercel"],
+            image: t.projects.skeyndorProject.thumbnail,
+            icon: "Sparkles",
+            demoLink: t.projects.skeyndorProject.demoLink,
+            technicalDocLabel: t.projects.skeyndorProject.technicalDocLabel,
+            screenshot: t.projects.skeyndorProject.screenshot
         }
     ];
 
@@ -42,7 +55,7 @@ const Projects = () => {
         }
 
         // Fallback to Icon
-        const Icon = project.icon === "Receipt" ? Receipt : Folder;
+        const Icon = project.icon === "Receipt" ? Receipt : project.icon === "Sparkles" ? Sparkles : Folder;
         return <Icon size={48} opacity={0.5} />;
     };
 
