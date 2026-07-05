@@ -90,7 +90,7 @@ export const translations = {
                 ],
                 thumbnail: "/tiktokai-thumbnail.png",
                 screenshot: "/tiktokai-screenshot.png"
-            }
+            },
         },
         contact: {
             title: "Contáctame",
@@ -205,7 +205,7 @@ export const translations = {
                 ],
                 thumbnail: "/tiktokai-thumbnail.png",
                 screenshot: "/tiktokai-screenshot.png"
-            }
+            },
         },
         contact: {
             title: "Get In Touch",

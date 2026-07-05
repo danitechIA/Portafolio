@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
-import { ExternalLink, Github, Folder, Eye, Receipt, Sparkles, Clapperboard } from 'lucide-react';
+import { ExternalLink, Github, Folder, Eye, Receipt, Sparkles, Clapperboard, TrendingUp } from 'lucide-react';
 import ProjectModal from './ProjectModal';
 import './Projects.css';
 
@@ -58,7 +58,7 @@ const Projects = () => {
             image: t.projects.tiktokaiProject.thumbnail,
             icon: "Clapperboard",
             screenshot: t.projects.tiktokaiProject.screenshot
-        }
+        },
     ];
 
     const renderProjectImage = (project) => {
@@ -67,7 +67,7 @@ const Projects = () => {
         }
 
         // Fallback to Icon
-        const Icon = project.icon === "Receipt" ? Receipt : project.icon === "Sparkles" ? Sparkles : project.icon === "Clapperboard" ? Clapperboard : Folder;
+        const Icon = project.icon === "Receipt" ? Receipt : project.icon === "Sparkles" ? Sparkles : project.icon === "Clapperboard" ? Clapperboard : project.icon === "TrendingUp" ? TrendingUp : Folder;
         return <Icon size={48} opacity={0.5} />;
     };
 
