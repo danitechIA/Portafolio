@@ -1,5 +1,7 @@
 import React from 'react';
 import { LanguageProvider } from './context/LanguageContext';
+import './App.css';
+import ParticleField from './components/Background/ParticleField';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import About from './components/About/About';
@@ -11,6 +13,7 @@ function App() {
   return (
     <LanguageProvider>
       <div className="App">
+        <ParticleField />
         <Header />
         <main>
           <Hero />
