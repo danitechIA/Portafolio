@@ -15,7 +15,7 @@ export const translations = {
                 "Frontend con React",
                 "Integración de LLMs",
             ],
-            subtitle: "Construyo aplicaciones modernas y sistemas automatizados con IA que funcionan en producción 24/7: desde editores de vídeo con inteligencia artificial hasta automatizaciones.",
+            subtitle: "Construyo aplicaciones modernas y sistemas automatizados con IA que funcionan en producción 24/7: desde aplicaciones de escritorio para agentes de IA hasta editores de vídeo con inteligencia artificial.",
             viewWork: "Ver Proyectos",
             downloadCV: "Descargar CV",
         },
@@ -113,6 +113,27 @@ export const translations = {
                 thumbnail: "/tiktokai-thumbnail.png",
                 screenshot: "/tiktokai-screenshot.png"
             },
+            skillgenProject: {
+                title: "AI Skill Generator — App de Escritorio para Agentes de IA",
+                shortDesc: "Aplicación de escritorio construida con Electron para crear y gestionar skills de agentes de código IA y chatear con el agente desde una interfaz visual, sin tocar la terminal.",
+                fullDesc: "Aplicación de escritorio multiplataforma construida con Electron que hace accesible el trabajo con agentes de código IA a través de una interfaz visual, eliminando por completo la necesidad de usar la terminal.\n\nLa app se organiza en cuatro vistas: un Dashboard con el estado del proyecto y del motor de IA de un vistazo, un gestor de Skills para ver, crear, editar y eliminar skills del agente con búsqueda instantánea, un Agent Chat para conversar con el agente directamente desde la app con la salida en streaming en tiempo real, y unos Ajustes con modo oscuro, cambio de proyecto e instalación guiada del motor de IA con progreso en vivo.\n\nLa comunicación entre la interfaz y el sistema usa el modelo de procesos de Electron con un preload script y contextBridge, exponiendo al renderer únicamente una API mínima y tipada (IPC seguro) en lugar de acceso directo a Node.js. La interfaz está construida en JavaScript vanilla, HTML y CSS, sin frameworks ni paso de build, con ventana sin marco y barra de título propia.\n\nIncluye detección automática del motor de IA instalado, instalación integrada desde la propia app y comprobación de actualizaciones contra GitHub Releases al arrancar.",
+                workflow: [
+                    "Selección de la carpeta del proyecto desde la app",
+                    "Dashboard con estado del proyecto y del motor de IA",
+                    "Gestión visual de skills (crear, editar, borrar, buscar)",
+                    "Chat con el agente de IA con respuesta en streaming",
+                    "Instalación del motor de IA con progreso en vivo",
+                    "Aviso de nuevas versiones vía GitHub Releases"
+                ],
+                features: [
+                    { title: "App de Escritorio Electron", desc: "Ventana sin marco con barra de título propia y UI en JS vanilla, sin frameworks ni build." },
+                    { title: "Gestor Visual de Skills", desc: "Crear, editar, borrar y buscar skills del agente sin escribir un solo comando." },
+                    { title: "Agent Chat Integrado", desc: "Conversación con el agente de código con salida en streaming e historial de contexto." },
+                    { title: "IPC Seguro", desc: "Preload con contextBridge que expone al renderer solo una API mínima, sin acceso directo a Node." }
+                ],
+                thumbnail: "/skillgen-thumbnail.png",
+                screenshot: "/skillgen-screenshot.png"
+            },
         },
         contact: {
             title: "Contáctame",
@@ -159,7 +180,7 @@ export const translations = {
                 "Frontend with React",
                 "LLM Integration",
             ],
-            subtitle: "I build modern applications and AI-powered automated systems that run in production 24/7 — from AI video editors to automations.",
+            subtitle: "I build modern applications and AI-powered automated systems that run in production 24/7 — from desktop apps for AI agents to AI video editors.",
             viewWork: "View Work",
             downloadCV: "Download CV",
         },
@@ -256,6 +277,27 @@ export const translations = {
                 ],
                 thumbnail: "/tiktokai-thumbnail.png",
                 screenshot: "/tiktokai-screenshot.png"
+            },
+            skillgenProject: {
+                title: "AI Skill Generator — Desktop App for AI Agents",
+                shortDesc: "Desktop application built with Electron to create and manage AI coding-agent skills and chat with the agent from a visual interface — no terminal required.",
+                fullDesc: "Cross-platform desktop application built with Electron that makes working with AI coding agents accessible through a visual interface, removing the need for a terminal entirely.\n\nThe app is organized into four views: a Dashboard with the project and AI engine status at a glance, a Skills manager to view, create, edit and delete agent skills with instant search, an Agent Chat to talk to the agent directly from the app with real-time streaming output, and a Settings view with dark mode, project switching and a guided AI engine installation with live progress.\n\nCommunication between the UI and the system uses Electron's process model with a preload script and contextBridge, exposing only a minimal, typed API to the renderer (secure IPC) instead of direct Node.js access. The interface is built in vanilla JavaScript, HTML and CSS — no frameworks, no build step — with a frameless window and a custom title bar.\n\nIt also ships with automatic detection of the installed AI engine, in-app installation, and an update check against GitHub Releases on startup.",
+                workflow: [
+                    "Select the project folder from the app",
+                    "Dashboard with project and AI engine status",
+                    "Visual skill management (create, edit, delete, search)",
+                    "Chat with the AI agent with streaming output",
+                    "In-app AI engine installation with live progress",
+                    "New version notifications via GitHub Releases"
+                ],
+                features: [
+                    { title: "Electron Desktop App", desc: "Frameless window with a custom title bar and a vanilla JS UI — no frameworks, no build step." },
+                    { title: "Visual Skills Manager", desc: "Create, edit, delete and search agent skills without typing a single command." },
+                    { title: "Built-in Agent Chat", desc: "Talk to the coding agent with streaming output and context history." },
+                    { title: "Secure IPC", desc: "Preload script with contextBridge exposing only a minimal API to the renderer — no direct Node access." }
+                ],
+                thumbnail: "/skillgen-thumbnail.png",
+                screenshot: "/skillgen-screenshot.png"
             },
         },
         contact: {

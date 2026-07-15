@@ -48,6 +48,11 @@ const Projects = () => {
 
     const projects = [
         {
+            ...t.projects.skillgenProject,
+            tech: ['Electron', 'Node.js', 'JavaScript', 'IPC', 'HTML/CSS'],
+            status: t.projects.statusLive,
+        },
+        {
             ...t.projects.tiktokaiProject,
             tech: ['FastAPI', 'Python', 'ffmpeg', 'Groq', 'Whisper', 'Llama 3.1'],
             status: t.projects.statusLive,
