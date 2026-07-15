@@ -48,8 +48,8 @@ const Projects = () => {
 
     const projects = [
         {
-            ...t.projects.tradingaiProject,
-            tech: ['Python', 'FastAPI', 'SQLite', 'Cerebras', 'Alpaca', 'systemd'],
+            ...t.projects.skillgenProject,
+            tech: ['Electron', 'Node.js', 'JavaScript', 'IPC', 'HTML/CSS'],
             status: t.projects.statusLive,
         },
         {
