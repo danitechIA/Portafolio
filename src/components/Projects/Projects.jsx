@@ -49,7 +49,7 @@ const Projects = () => {
     const projects = [
         {
             ...t.projects.skillgenProject,
-            tech: ['Electron', 'Node.js', 'JavaScript', 'IPC', 'HTML/CSS'],
+            tech: ['Tauri', 'Rust', 'Tokio', 'JavaScript', 'HTML/CSS'],
             status: t.projects.statusLive,
         },
         {
