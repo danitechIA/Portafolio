@@ -3,7 +3,29 @@ export const translations = {
         nav: {
             about: "Sobre Mí",
             projects: "Proyectos",
+            certificates: "Certificados",
             contact: "Contacto",
+        },
+        certs: {
+            title: "Formación Certificada",
+            subtitle: "Certificaciones oficiales de Meta y Google completadas a través de Coursera, además de formación presencial en desarrollo con IA. Haz clic en cualquier certificado para verlo.",
+            view: "Ver certificado",
+            showCourses: "Ver cursos del programa",
+            hideCourses: "Ocultar cursos",
+            programs: {
+                metaBackend: {
+                    name: "Meta Back-End Developer — Certificado Profesional",
+                    desc: "Programa profesional de 9 cursos de Meta: Python, Django, APIs REST, bases de datos, control de versiones, el stack completo y un proyecto final de backend.",
+                },
+                googlePrompting: {
+                    name: "Google Prompting Essentials",
+                    desc: "Especialización de 4 cursos de Google en prompt engineering: diseño de prompts para el trabajo diario, análisis de datos, presentaciones y uso de la IA como socio experto.",
+                },
+                bigSchool: {
+                    name: "Curso de Iniciación al Desarrollo con IA",
+                    desc: "Jornadas formativas presenciales de BIG school sobre desarrollo con inteligencia artificial (6 horas).",
+                },
+            },
         },
         hero: {
             greeting: "Hola, soy",
@@ -168,7 +190,29 @@ export const translations = {
         nav: {
             about: "About",
             projects: "Projects",
+            certificates: "Certificates",
             contact: "Contact",
+        },
+        certs: {
+            title: "Certified Training",
+            subtitle: "Official Meta and Google certifications completed through Coursera, plus in-person training in AI development. Click any certificate to view it.",
+            view: "View certificate",
+            showCourses: "Show program courses",
+            hideCourses: "Hide courses",
+            programs: {
+                metaBackend: {
+                    name: "Meta Back-End Developer — Professional Certificate",
+                    desc: "Meta's 9-course professional program: Python, Django, REST APIs, databases, version control, the full stack and a final backend capstone project.",
+                },
+                googlePrompting: {
+                    name: "Google Prompting Essentials",
+                    desc: "Google's 4-course specialization in prompt engineering: designing prompts for everyday work, data analysis, presentations and using AI as an expert partner.",
+                },
+                bigSchool: {
+                    name: "Introduction to AI Development Course",
+                    desc: "In-person training sessions by BIG school on AI-powered development (6 hours).",
+                },
+            },
         },
         hero: {
             greeting: "Hi, I'm",

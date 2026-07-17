@@ -3,7 +3,7 @@ import { useLanguage } from '../../context/LanguageContext';
 import { Globe, Menu, X, Github, Linkedin } from 'lucide-react';
 import './Header.css';
 
-const SECTIONS = ['about', 'projects', 'contact'];
+const SECTIONS = ['about', 'projects', 'certificates', 'contact'];
 
 const Header = () => {
   const { t, language, toggleLanguage } = useLanguage();
@@ -54,7 +54,7 @@ const Header = () => {
               className={`nav-link ${active === id ? 'active' : ''}`}
               onClick={closeMenu}
             >
-              <span className="nav-index">0{i + 1}.</span> {t.nav[id === 'about' ? 'about' : id === 'projects' ? 'projects' : 'contact']}
+              <span className="nav-index">0{i + 1}.</span> {t.nav[id]}
             </a>
           ))}
           <div className="nav-socials">

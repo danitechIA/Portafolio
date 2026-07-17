@@ -34,7 +34,7 @@ const Contact = () => {
         <section id="contact" className="section contact-section" ref={ref}>
             <div className="container">
                 <div className="reveal contact-header">
-                    <span className="section-tag">03 · {t.nav.contact}</span>
+                    <span className="section-tag">04 · {t.nav.contact}</span>
                     <h2 className="section-title"><span className="accent">{t.contact.title}</span></h2>
                     <p className="contact-intro">{t.contact.intro}</p>
                 </div>
