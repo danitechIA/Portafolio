@@ -8,7 +8,7 @@ export const translations = {
         },
         certs: {
             title: "Formación Certificada",
-            subtitle: "Certificaciones oficiales de Meta y Google completadas a través de Coursera, además de formación presencial en desarrollo con IA. Haz clic en cualquier certificado para verlo.",
+            subtitle: "Certificaciones oficiales de Meta y Google completadas a través de Coursera, además de formación en desarrollo con IA. Haz clic en cualquier certificado para verlo.",
             view: "Ver certificado",
             showCourses: "Ver cursos del programa",
             hideCourses: "Ocultar cursos",
@@ -23,7 +23,7 @@ export const translations = {
                 },
                 bigSchool: {
                     name: "Curso de Iniciación al Desarrollo con IA",
-                    desc: "Jornadas formativas presenciales de BIG school sobre desarrollo con inteligencia artificial (6 horas).",
+                    desc: "Jornadas formativas de BIG school sobre desarrollo con inteligencia artificial (6 horas).",
                 },
             },
         },
@@ -195,7 +195,7 @@ export const translations = {
         },
         certs: {
             title: "Certified Training",
-            subtitle: "Official Meta and Google certifications completed through Coursera, plus in-person training in AI development. Click any certificate to view it.",
+            subtitle: "Official Meta and Google certifications completed through Coursera, plus training in AI development. Click any certificate to view it.",
             view: "View certificate",
             showCourses: "Show program courses",
             hideCourses: "Hide courses",
@@ -210,7 +210,7 @@ export const translations = {
                 },
                 bigSchool: {
                     name: "Introduction to AI Development Course",
-                    desc: "In-person training sessions by BIG school on AI-powered development (6 hours).",
+                    desc: "Training sessions by BIG school on AI-powered development (6 hours).",
                 },
             },
         },
