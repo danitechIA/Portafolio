@@ -51,11 +51,13 @@ const Projects = () => {
             ...t.projects.skillgenProject,
             tech: ['Tauri', 'Rust', 'Tokio', 'JavaScript', 'HTML/CSS'],
             status: t.projects.statusLive,
+            repoLink: 'https://github.com/danitechIA/AI-SKILL-CREATOR',
         },
         {
             ...t.projects.tiktokaiProject,
             tech: ['FastAPI', 'Python', 'ffmpeg', 'Groq', 'Whisper', 'Llama 3.1'],
             status: t.projects.statusLive,
+            repoLink: 'https://github.com/danitechIA/TIKTOKAI',
         },
         {
             ...t.projects.skeyndorProject,
