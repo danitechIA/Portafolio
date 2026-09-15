@@ -64,6 +64,7 @@ export const translations = {
             viewDetails: "Ver Detalles",
             close: "Cerrar",
             statusLive: "EN PRODUCCIÓN",
+            statusDemo: "DEMO EN VIVO",
             moreOnGithub: "¿Quieres ver más? Encuentra todo mi código y proyectos en GitHub.",
             workflowTitle: "Arquitectura del Flujo",
             featuresTitle: "Características Clave",
@@ -113,6 +114,29 @@ export const translations = {
                 technicalDocLabel: "Visitar Web en Vivo",
                 thumbnail: "/skeyndor-thumbnail.png",
                 screenshot: "/skeyndor-screenshot.png"
+            },
+            akaneProject: {
+                title: "AKANE — Web Cinemática con Entrada 3D por Scroll",
+                shortDesc: "Sitio de restaurante en el que la cámara atraviesa el pórtico de un templo al hacer scroll. Sin Three.js, sin GSAP, sin ninguna librería: un HTML, un CSS y un JS.",
+                fullDesc: "Al entrar solo ves un templo japonés al atardecer. Haces scroll y la cámara avanza: la puerta se queda clavada en el centro mientras el templo crece y sale por los bordes, hasta que la atraviesas y apareces dentro del comedor. De ahí en adelante ya es la web del restaurante — carta, la casa y reservas.\n\nLo interesante es que no hay ningún motor 3D detrás. Ni Three.js, ni GSAP, ni librerías de scroll suave: es un index.html, una hoja de estilos y un archivo JavaScript. Todo el efecto sale de una sola propiedad bien usada, transform.\n\nEl truco del portal está en el origen de la escala. El PNG del templo es opaco salvo por el hueco de la puerta, así que hace de máscara él solo: el comedor va detrás a pantalla completa y solo asoma por ese vano. Poniendo el transform-origin en el centro exacto del hueco, la puerta no se mueve ni un píxel mientras todo lo demás se agranda — que es justo lo que el ojo lee como avanzar hacia ella.\n\nLa geometría está medida, no puesta a ojo: las proporciones salen de las imágenes reales y el zoom final se calcula como la escala mínima que hace que el vano cubra la esquina más lejana del encuadre en los dos ejes. Con un número «bonito» se colaba una franja de cielo por el lado corto.\n\nY una regla para todo el sitio: nada se desvanece ni se desenfoca. Lo que tiene que desaparecer sale del encuadre por su propio pie.",
+                workflow: [
+                    "Ilustración de la escena por capas (cielo, templo, cuñas, comedor)",
+                    "Compresión a WebP y subseteado de las seis tipografías a WOFF2",
+                    "Bloque sticky de 420vh que convierte el scroll en progreso 0→1",
+                    "Zoom con transform-origin en el centro del vano de la puerta",
+                    "Un único listener de scroll con guarda de requestAnimationFrame",
+                    "Adaptación por breakpoints desde un solo ancho de referencia"
+                ],
+                features: [
+                    { title: "Cero librerías", desc: "Ni Three.js ni GSAP: un HTML, un CSS y un JS. Todo el movimiento sale de transform." },
+                    { title: "El templo es su propia máscara", desc: "El PNG es opaco salvo el vano, así que el comedor de detrás solo asoma por la puerta. Sin clip-path que se descoloque." },
+                    { title: "Geometría calculada", desc: "El zoom final es la escala mínima que cubre la esquina más lejana en ambos ejes, medida sobre las imágenes reales." },
+                    { title: "Un solo frame por scroll", desc: "Un listener con guarda de rAF pinta todos los módulos en el mismo frame; el resize se filtra para la barra del móvil." }
+                ],
+                demoLink: "https://akane-3d.vercel.app",
+                demoLinkLabel: "Ver Web",
+                thumbnail: "/akane-thumbnail.png",
+                screenshot: "/akane-screenshot.png"
             },
             tiktokaiProject: {
                 title: "TikTokAI — Editor de Subtítulos con IA",
@@ -251,6 +275,7 @@ export const translations = {
             viewDetails: "View Details",
             close: "Close",
             statusLive: "LIVE IN PRODUCTION",
+            statusDemo: "LIVE DEMO",
             moreOnGithub: "Want to see more? Find all my code and projects on GitHub.",
             workflowTitle: "Workflow Architecture",
             featuresTitle: "Key Features",
@@ -300,6 +325,29 @@ export const translations = {
                 technicalDocLabel: "Visit Live Site",
                 thumbnail: "/skeyndor-thumbnail.png",
                 screenshot: "/skeyndor-screenshot.png"
+            },
+            akaneProject: {
+                title: "AKANE — Cinematic Site with a Scroll-Driven 3D Entrance",
+                shortDesc: "Restaurant site where the camera travels through a temple gateway as you scroll. No Three.js, no GSAP, no libraries at all: one HTML, one CSS, one JS.",
+                fullDesc: "You land on a Japanese temple at dusk. You scroll and the camera moves forward: the doorway stays pinned in the centre while the temple grows and exits the frame, until you pass through it and end up inside the dining room. From there on it is the restaurant site — menu, the house, bookings.\n\nThe interesting part is that there is no 3D engine behind it. No Three.js, no GSAP, no smooth-scroll library: it is one index.html, one stylesheet and one JavaScript file. The whole effect comes from a single property used well — transform.\n\nThe portal trick lives in the scale origin. The temple PNG is opaque except for the doorway, so it masks the scene by itself: the dining room sits behind it at full screen and only shows through that gap. By putting transform-origin at the exact centre of the opening, the door never moves a pixel while everything else grows — which is precisely what the eye reads as moving towards it.\n\nThe geometry is measured, not eyeballed: the ratios come from the real images, and the final zoom is computed as the smallest scale that makes the opening cover the furthest corner of the frame on both axes. With a nice round number instead, a strip of sky leaked in along the short side.\n\nAnd one rule across the whole site: nothing fades and nothing blurs. Whatever has to disappear leaves the frame on its own.",
+                workflow: [
+                    "Scene illustrated in layers (sky, temple, wedges, dining room)",
+                    "WebP compression and six typefaces subset down to WOFF2",
+                    "A 420vh sticky block that turns scroll into 0→1 progress",
+                    "Zoom with transform-origin at the centre of the doorway",
+                    "A single scroll listener guarded by requestAnimationFrame",
+                    "Breakpoint layout derived from one reference width"
+                ],
+                features: [
+                    { title: "Zero libraries", desc: "No Three.js, no GSAP: one HTML, one CSS, one JS. Every movement comes from transform." },
+                    { title: "The temple masks itself", desc: "The PNG is opaque except for the opening, so the room behind shows only through the door. No clip-path drifting with the transform." },
+                    { title: "Computed geometry", desc: "The final zoom is the smallest scale covering the furthest corner on both axes, measured from the real artwork." },
+                    { title: "One frame per scroll", desc: "A single rAF-guarded listener paints every module in the same frame, with resize filtered for the mobile browser bar." }
+                ],
+                demoLink: "https://akane-3d.vercel.app",
+                demoLinkLabel: "View Site",
+                thumbnail: "/akane-thumbnail.png",
+                screenshot: "/akane-screenshot.png"
             },
             tiktokaiProject: {
                 title: "TikTokAI — AI Subtitle Editor",
