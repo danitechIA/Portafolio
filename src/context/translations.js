@@ -85,7 +85,7 @@ export const translations = {
                     { title: "Extracción IA", desc: "Identifica automáticamente importes, fechas y nombres de empresas." },
                     { title: "Gestión de Datos", desc: "Guarda registros históricos en MySQL y Excel para contabilidad." }
                 ],
-                demoLink: "https://github.com/danistrix63/n8n_tikets/blob/main/DEMO.md",
+                demoLink: "https://github.com/danitechIA/n8n_tikets/blob/main/DEMO.md",
                 technicalDocLabel: "Ver Guía Técnica",
                 thumbnail: "/n8n-thumbnail.png",
                 screenshot: "/n8n-workflow.png"
@@ -272,7 +272,7 @@ export const translations = {
                     { title: "AI Extraction", desc: "Automatically identifies amounts, dates, and company names." },
                     { title: "Data Management", desc: "Keeps historical records in MySQL and Excel for accounting." }
                 ],
-                demoLink: "https://github.com/danistrix63/n8n_tikets/blob/main/DEMO.md",
+                demoLink: "https://github.com/danitechIA/n8n_tikets/blob/main/DEMO.md",
                 technicalDocLabel: "View Technical Guide",
                 thumbnail: "/n8n-thumbnail.png",
                 screenshot: "/n8n-workflow.png"
