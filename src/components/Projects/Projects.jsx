@@ -55,7 +55,7 @@ const Projects = () => {
         },
         {
             ...t.projects.tiktokaiProject,
-            tech: ['FastAPI', 'Python', 'ffmpeg', 'Groq', 'Whisper', 'Llama 3.1'],
+            tech: ['FastAPI', 'Python', 'ffmpeg', 'libass', 'Groq', 'Whisper'],
             status: t.projects.statusLive,
             repoLink: 'https://github.com/danitechIA/TIKTOKAI',
         },
