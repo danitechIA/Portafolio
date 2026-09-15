@@ -65,6 +65,11 @@ const Projects = () => {
             status: t.projects.statusLive,
         },
         {
+            ...t.projects.akaneProject,
+            tech: ['HTML', 'CSS', 'JavaScript', 'Vanilla', 'WebP', 'JSON-LD'],
+            status: t.projects.statusDemo,
+        },
+        {
             ...t.projects.n8nProject,
             tech: ['n8n', 'Docker', 'VPS', 'MySQL', 'OpenAI'],
             status: t.projects.statusLive,
