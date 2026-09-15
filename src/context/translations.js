@@ -116,21 +116,21 @@ export const translations = {
             },
             tiktokaiProject: {
                 title: "TikTokAI — Editor de Subtítulos con IA",
-                shortDesc: "Editor de vídeo estilo CapCut que transcribe y genera subtítulos karaoke palabra a palabra con IA, listo para renderizar y publicar en TikTok.",
-                fullDesc: "Subes un vídeo vertical y en segundos tienes subtítulos karaoke palabra a palabra, perfectamente sincronizados con tu voz y listos para publicar en TikTok.\n\nLa IA escucha el vídeo, lo transcribe con la marca de tiempo exacta de cada palabra y te propone un título viral y hashtags basados en lo que realmente dices — no se inventa nada que no esté en el vídeo.\n\nDespués lo retocas como en CapCut: un editor con timeline donde mueves subtítulos, títulos y efectos de sonido, con imantado a las palabras, deshacer y vista previa en directo. Cuando te gusta el resultado, un clic renderiza el vídeo final con todo incrustado.\n\nLo construí desde cero con Python (FastAPI) y ffmpeg, y lleva meses funcionando 24/7 en mi propio servidor como un servicio más de producción.",
+                shortDesc: "Editor de vídeo móvil estilo CapCut que transcribe y genera subtítulos karaoke palabra a palabra con IA, listo para renderizar y publicar en TikTok.",
+                fullDesc: "Grabas un vídeo vertical con el móvil, lo subes desde el propio móvil y en segundos tienes subtítulos karaoke palabra a palabra, sincronizados con tu voz y listos para publicar en TikTok.\n\nLa IA escucha el vídeo y lo transcribe con la marca de tiempo exacta de cada palabra, así que la palabra que suena se resalta sola. A partir de lo que realmente dices propone también descripción y hashtags — no se inventa nada que no esté en el vídeo.\n\nEl editor es una app a pantalla completa pensada para el dedo, no una web de escritorio encogida: el cursor se queda fijo en el centro y arrastras la cinta de tiempo, con la tira de fotogramas del vídeo debajo para saber siempre dónde estás. Cada ajuste (color, posición, sincronía, estilo, títulos, sonidos) se abre en una hoja inferior, con vista previa en directo y deshacer.\n\nEl reto técnico fue que un .mov de iPhone a 15 Mbps hacía que el navegador del móvil se atragantara. Lo resolví generando en el servidor un vídeo proxy ligero con un fotograma clave por segundo y una tira de miniaturas en una sola imagen: saltar por la línea de tiempo pasó a ser instantáneo, y el render final sigue usando el vídeo original a máxima calidad.\n\nLo construí desde cero con Python (FastAPI) y ffmpeg, y lleva meses funcionando 24/7 en mi propio VPS como un servicio más de producción.",
                 workflow: [
-                    "Subida de vídeo vertical (grabado en el propio móvil)",
-                    "Transcripción word-level con Groq Whisper large-v3",
-                    "Edición en timeline multipista (subtítulos, títulos, sonido)",
-                    "Generación de hook viral y hashtags con Llama 3.1 (Groq)",
-                    "Render final quemando subtítulos con ffmpeg/libass",
-                    "Descarga del vídeo listo para publicar"
+                    "Subida del vídeo vertical desde el móvil",
+                    "Preparación automática: proxy ligero + tira de miniaturas",
+                    "Transcripción palabra a palabra con Groq Whisper large-v3",
+                    "Edición táctil en timeline (subtítulos, títulos, sonidos)",
+                    "Generación de descripción y hashtags con IA",
+                    "Render con ffmpeg/libass y descarga listo para publicar"
                 ],
                 features: [
+                    { title: "Editor Móvil Táctil", desc: "App a pantalla completa estilo CapCut: cursor fijo, cinta arrastrable y ajustes en hoja inferior." },
                     { title: "Transcripción con IA", desc: "Groq Whisper large-v3 transcribe con marcas de tiempo por palabra para el efecto karaoke." },
-                    { title: "Editor Multipista", desc: "Timeline estilo CapCut con imantado, deshacer global y edición por bloques." },
-                    { title: "Render ffmpeg/libass", desc: "Subtítulos y títulos animados quemados directamente en el vídeo final." },
-                    { title: "Copywriting con IA", desc: "Genera hook viral y hashtags con Llama 3.1 fiel al contenido real del vídeo." }
+                    { title: "Proxy y Miniaturas", desc: "El servidor genera un vídeo ligero y una tira de fotogramas para que la edición vaya fluida en el móvil." },
+                    { title: "Render ffmpeg/libass", desc: "Subtítulos y títulos animados quemados en el vídeo final, siempre desde el original a máxima calidad." }
                 ],
                 thumbnail: "/tiktokai-thumbnail.png",
                 screenshot: "/tiktokai-screenshot.png"
@@ -303,21 +303,21 @@ export const translations = {
             },
             tiktokaiProject: {
                 title: "TikTokAI — AI Subtitle Editor",
-                shortDesc: "CapCut-style video editor that transcribes and generates word-by-word karaoke subtitles with AI, ready to render and post to TikTok.",
-                fullDesc: "Upload a vertical video and within seconds you get word-by-word karaoke subtitles, perfectly synced to your voice and ready to publish on TikTok.\n\nThe AI listens to the video, transcribes it with the exact timestamp of every word, and suggests a viral title and hashtags based on what you actually say — it never makes up claims that are not in the video.\n\nThen you polish it like in CapCut: a timeline editor where you move subtitles, titles and sound effects around, with word snapping, undo and live preview. When it looks right, one click renders the final video with everything burned in.\n\nI built it from scratch with Python (FastAPI) and ffmpeg, and it has been running 24/7 on my own server for months as one more production service.",
+                shortDesc: "Mobile CapCut-style video editor that transcribes and generates word-by-word karaoke subtitles with AI, ready to render and post to TikTok.",
+                fullDesc: "You record a vertical video on your phone, upload it from that same phone, and within seconds you get word-by-word karaoke subtitles synced to your voice and ready to publish on TikTok.\n\nThe AI listens to the video and transcribes it with the exact timestamp of every word, so the word being spoken highlights itself. From what you actually say it also drafts a description and hashtags — it never makes up claims that are not in the video.\n\nThe editor is a full-screen app built for thumbs, not a shrunken desktop site: the playhead stays fixed in the centre while you drag the time ribbon, with a filmstrip of the video underneath so you always know where you are. Every setting (colour, position, sync, style, titles, sounds) opens in a bottom sheet, with live preview and undo.\n\nThe real challenge was that a 15 Mbps iPhone .mov made mobile browsers choke. I solved it by generating a lightweight proxy video server-side with one keyframe per second, plus a thumbnail strip baked into a single image: scrubbing the timeline became instant, while the final render still uses the original footage at full quality.\n\nI built it from scratch with Python (FastAPI) and ffmpeg, and it has been running 24/7 on my own VPS for months as one more production service.",
                 workflow: [
-                    "Upload a vertical video (recorded on the phone)",
+                    "Upload the vertical video straight from the phone",
+                    "Automatic prep: lightweight proxy + thumbnail strip",
                     "Word-level transcription with Groq Whisper large-v3",
-                    "Edit on a multi-track timeline (subtitles, titles, sound)",
-                    "Generate a viral hook and hashtags with Llama 3.1 (Groq)",
-                    "Final render burning in subtitles with ffmpeg/libass",
-                    "Download the video ready to publish"
+                    "Touch editing on the timeline (subtitles, titles, sounds)",
+                    "AI-generated description and hashtags",
+                    "Render with ffmpeg/libass and download ready to publish"
                 ],
                 features: [
+                    { title: "Touch Mobile Editor", desc: "Full-screen CapCut-style app: fixed playhead, draggable ribbon and bottom-sheet settings." },
                     { title: "AI Transcription", desc: "Groq Whisper large-v3 transcribes with per-word timestamps for the karaoke effect." },
-                    { title: "Multi-Track Editor", desc: "CapCut-style timeline with snapping, global undo, and block-based editing." },
-                    { title: "ffmpeg/libass Render", desc: "Animated subtitles and titles burned directly into the final video." },
-                    { title: "AI Copywriting", desc: "Generates a viral hook and hashtags with Llama 3.1, faithful to the video's real content." }
+                    { title: "Proxy & Thumbnails", desc: "The server builds a light video and a filmstrip so editing stays smooth on a phone." },
+                    { title: "ffmpeg/libass Render", desc: "Animated subtitles and titles burned into the final video, always from the full-quality original." }
                 ],
                 thumbnail: "/tiktokai-thumbnail.png",
                 screenshot: "/tiktokai-screenshot.png"
