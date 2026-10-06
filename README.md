@@ -1,3 +1,12 @@
+<p align="center"><img src=".github/header.svg" alt="Portafolio" width="100%"></p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=white" alt="React">
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite">
+  <img src="https://img.shields.io/badge/GSAP-88CE02?style=flat-square&logo=greensock&logoColor=white" alt="GSAP">
+  <a href="https://danitechia.vercel.app"><img src="https://img.shields.io/badge/Ver%20web-danitechia.vercel.app-10B981?style=flat-square&logo=vercel&logoColor=white" alt="web"></a>
+</p>
+
 # Portafolio de Daniel Dans Cots
 
 Este es un portafolio web moderno construido con **React** y **Vite**, diseñado para ser rápido, responsive y fácil de desplegar en Vercel. Incluye un chatbot interactivo y soporte multi-idioma (Español/Inglés).
